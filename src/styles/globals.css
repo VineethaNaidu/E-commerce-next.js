@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .headerList {
+    @apply hover:underline;
+  }
+
+  /* Custom styles for product cards */
+  .product-card {
+    @apply border rounded overflow-hidden relative w-60;
+  }
+
+  .product-card .add-to-cart {
+    @apply absolute bottom-0 left-0 right-0 bg-green-500 bg-opacity-75 text-white text-center p-2 hidden;
+  }
+
+  .product-card:hover .add-to-cart {
+    @apply block; /* hover */
+  }
+
+  /* Button styles */
+  .add-to-cart-button {
+    @apply text-white font-bold py-1 px-4 rounded;
+  }
+
+  /* Add to your globals.css or component-specific CSS file */
+  .signup-container {
+    display: flex;
+  }
+
+  .image-section {
+    width: 50%; /* Take half the screen width */
+  }
+
+  .form-section {
+    width: 50%; /* Take half the screen width */
+    padding: 2rem; /* Adjust padding as necessary */
+  }
+
+  img {
+    max-width: 100%;
+    height: auto; /* Ensure the image scales correctly */
+  }
+
+  .login-container {
+    display: flex;
+  }
+
+  .image-section {
+    width: 50%; /* Take half the screen width */
+  }
+
+  .form-section {
+    width: 50%; /* Take half the screen width */
+    padding: 2rem; /* Adjust padding as necessary */
+  }
+
+  img {
+    max-width: 100%;
+    height: auto; /* Ensure the image scales correctly */
+  }
+
+  /* Add your global styles here */
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(-100%);
+    }
+    75% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+
+  .animated-image-container {
+    overflow: hidden;
+    height: 40rem; /* Increased height */
+    position: relative;
+  }
+
+  .animated-image-slider {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth transition for sliding */
+  }
+
+  .animated-image {
+    flex-shrink: 0;
+    width: 100%; /* Fill the width of the container */
+    height: 40rem; /* Match the increased height of the container */
+  }
+
+  .animated-image img {
+    object-fit: cover; /* Cover the entire area while maintaining aspect ratio */
+    width: 100%; /* Ensure the image fills the width */
+    height: 100%; /* Ensure the image fills the height */
+  }
+
+  .category-item {
+    height: 5rem;
+    width: 200px;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+  }
+
+  .category-item:hover {
+    background-color: red;
+    color: white;
+  }
+
+  table {
+    border-collapse: collapse; /* Prevent double borders */
+  }
+
+  th {
+    border-bottom: 2px solid #e5e7eb; /* Tailwind gray-300 */
+  }
+
+  td {
+    padding: 12px; /* Adjust padding for better spacing */
+  }
+
+  tr:hover {
+    background-color: #f3f4f6; /* Tailwind gray-100 */
+  }
+}
